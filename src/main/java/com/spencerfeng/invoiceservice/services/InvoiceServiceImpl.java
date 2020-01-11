@@ -1,6 +1,6 @@
 package com.spencerfeng.invoiceservice.services;
 
-import com.spencerfeng.invoiceservice.entities.Invoice;
+import com.spencerfeng.invoiceservice.models.Invoice;
 import com.spencerfeng.invoiceservice.repositories.InvoiceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 

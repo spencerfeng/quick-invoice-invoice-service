@@ -1,4 +1,4 @@
-package com.spencerfeng.invoiceservice.entities;
+package com.spencerfeng.invoiceservice.models;
 
 import com.spencerfeng.invoiceservice.models.InvoiceStatus;
 import lombok.Data;
