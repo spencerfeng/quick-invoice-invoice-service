@@ -2,6 +2,7 @@ package com.spencerfeng.invoiceservice.config;
 
 import com.spencerfeng.invoiceservice.services.InvoiceService;
 import com.spencerfeng.invoiceservice.services.InvoiceServiceImpl;
+import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -11,4 +12,10 @@ public class AppConfig {
     public InvoiceService invoiceService() {
         return new InvoiceServiceImpl();
     }
+
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
+    }
+
 }
