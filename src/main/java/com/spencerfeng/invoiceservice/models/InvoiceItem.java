@@ -1,36 +1,35 @@
 package com.spencerfeng.invoiceservice.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Data
-public class Invoice implements java.io.Serializable {
+public class InvoiceItem {
     @Id
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid2")
     private String id;
 
-    private String business;
+    @ManyToOne
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    @JoinColumn(name="invoice_id", nullable = false)
+    @JsonIgnoreProperties("items")
+    private Invoice invoice;
 
-    private String client;
-
-    private String invoiceNo;
+    private String description;
 
     @Enumerated(EnumType.STRING)
-    private InvoiceStatus status;
-
-    private String additionalInfo;
-
-    @OneToMany(mappedBy = "invoice")
-    private Set<InvoiceItem> items = new HashSet<>();
+    private InvoiceItemType type;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
