@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
-public class InvoiceItem {
+public class InvoiceLineItem {
     @Id
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid2")

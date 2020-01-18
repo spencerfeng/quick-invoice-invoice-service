@@ -30,7 +30,7 @@ public class Invoice implements java.io.Serializable {
     private String additionalInfo;
 
     @OneToMany(mappedBy = "invoice")
-    private Set<InvoiceItem> items = new HashSet<>();
+    private Set<InvoiceLineItem> items = new HashSet<>();
 
     @CreationTimestamp
     private LocalDateTime createdAt;

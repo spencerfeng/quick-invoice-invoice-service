@@ -1,7 +1,7 @@
 package com.spencerfeng.invoiceservice.services;
 
-import com.spencerfeng.invoiceservice.models.InvoiceItem;
+import com.spencerfeng.invoiceservice.models.InvoiceLineItem;
 
 public interface InvoiceItemService {
-    InvoiceItem addInvoiceItem(InvoiceItem invoiceItem);
+    InvoiceLineItem addInvoiceItem(InvoiceLineItem invoiceItem);
 }

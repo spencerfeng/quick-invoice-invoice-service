@@ -1,6 +1,6 @@
 package com.spencerfeng.invoiceservice.services;
 
-import com.spencerfeng.invoiceservice.models.InvoiceItem;
+import com.spencerfeng.invoiceservice.models.InvoiceLineItem;
 import com.spencerfeng.invoiceservice.repositories.InvoiceItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -9,7 +9,7 @@ public class InvoiceItemServiceImpl implements InvoiceItemService {
     private InvoiceItemRepository invoiceItemRepository;
 
     @Override
-    public InvoiceItem addInvoiceItem(InvoiceItem invoiceItem) {
+    public InvoiceLineItem addInvoiceItem(InvoiceLineItem invoiceItem) {
         return invoiceItemRepository.save(invoiceItem);
     }
 }
