@@ -31,6 +31,12 @@ public class InvoiceLineItem {
     @Enumerated(EnumType.STRING)
     private InvoiceItemType type;
 
+    private float quantity;
+
+    private int rate;
+
+    private InvoiceItemUnitType unitType;
+
     @CreationTimestamp
     private LocalDateTime createdAt;
 
