@@ -25,7 +25,8 @@ public class Invoice implements java.io.Serializable {
     private String invoiceNo;
 
     @Enumerated(EnumType.STRING)
-    private InvoiceStatus status;
+    @Column(nullable = false)
+    private InvoiceStatus status = InvoiceStatus.DRAFT;
 
     private String additionalInfo;
 
@@ -38,5 +39,20 @@ public class Invoice implements java.io.Serializable {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
-    private LocalDateTime deletedAt;
+    public void addLineItem(InvoiceLineItem item) {
+        items.add(item);
+        item.setInvoice(this);
+    }
+
+    public void removeLineItem(InvoiceLineItem item) {
+        items.remove(item);
+        item.setInvoice(null);
+    }
+
+    public void removeAllLineItems() {
+        items.forEach(item -> {
+            item.setInvoice(null);
+        });
+        items.clear();
+    }
 }

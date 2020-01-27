@@ -1,7 +1,7 @@
 package com.spencerfeng.invoiceservice.config;
 
-import com.spencerfeng.invoiceservice.services.InvoiceItemService;
-import com.spencerfeng.invoiceservice.services.InvoiceItemServiceImpl;
+import com.spencerfeng.invoiceservice.services.InvoiceLineItemService;
+import com.spencerfeng.invoiceservice.services.InvoiceLineItemServiceImpl;
 import com.spencerfeng.invoiceservice.services.InvoiceService;
 import com.spencerfeng.invoiceservice.services.InvoiceServiceImpl;
 import org.modelmapper.ModelMapper;
@@ -16,8 +16,8 @@ public class AppConfig {
     }
 
     @Bean
-    public InvoiceItemService invoiceItemService() {
-        return new InvoiceItemServiceImpl();
+    public InvoiceLineItemService invoiceItemService() {
+        return new InvoiceLineItemServiceImpl();
     }
 
     @Bean

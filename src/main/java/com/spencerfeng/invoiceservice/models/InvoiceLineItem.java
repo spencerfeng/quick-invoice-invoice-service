@@ -19,6 +19,9 @@ public class InvoiceLineItem {
     @GenericGenerator(name = "system-uuid", strategy = "uuid2")
     private String id;
 
+    @Column(nullable = false)
+    private String title;
+
     @ManyToOne
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
@@ -26,22 +29,24 @@ public class InvoiceLineItem {
     @JsonIgnoreProperties("items")
     private Invoice invoice;
 
-    private String description;
+    private String details;
 
     @Enumerated(EnumType.STRING)
-    private InvoiceItemType type;
+    @Column(nullable = false)
+    private InvoiceLineItemType type;
 
-    private float quantity;
+    @Column(nullable = false)
+    private float quantity = 1f;
 
+    @Column(nullable = false)
     private int rate;
 
-    private InvoiceItemUnitType unitType;
+    @Column(nullable = false)
+    private InvoiceItemUnitType unitType = InvoiceItemUnitType.NONE;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
     private LocalDateTime updatedAt;
-
-    private LocalDateTime deletedAt;
 }

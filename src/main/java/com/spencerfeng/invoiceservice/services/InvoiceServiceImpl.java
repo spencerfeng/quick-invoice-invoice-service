@@ -11,12 +11,12 @@ public class InvoiceServiceImpl implements InvoiceService {
     InvoiceRepository invoiceRepository;
 
     @Override
-    public Invoice addInvoice(Invoice invoice) {
+    public Invoice save(Invoice invoice) {
         return invoiceRepository.save(invoice);
     }
 
     @Override
-    public Optional<Invoice> findInvoiceById(String id) {
+    public Optional<Invoice> findById(String id) {
         return invoiceRepository.findById(id);
     }
 }

@@ -5,7 +5,7 @@ import com.spencerfeng.invoiceservice.models.Invoice;
 import java.util.Optional;
 
 public interface InvoiceService {
-   Invoice addInvoice(Invoice invoice);
+   Invoice save(Invoice invoice);
 
-   Optional<Invoice> findInvoiceById(String id);
+   Optional<Invoice> findById(String id);
 }

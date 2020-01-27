@@ -31,7 +31,7 @@ public class InvoiceControllerTests {
     public void addInvoice_test() throws Exception {
         Invoice invoice = new Invoice();
 
-        when(invoiceService.addInvoice(invoice)).thenReturn(invoice);
+        when(invoiceService.save(invoice)).thenReturn(invoice);
 
         RequestBuilder request = MockMvcRequestBuilders
                 .post("/api/v1/invoices")
